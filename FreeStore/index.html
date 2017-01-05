@@ -6,17 +6,14 @@
     <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
     <script src="js/aframe-travel-component.js"></script>
     <script src="js/aframe-animation-component.js"></script>
-    <!--<script src="/js/aframe-hyperlink.js"></script>
-    <script src="/js/sw-load.js" data-service-worker="../sw.js" data-service-worker-scope="../"></script> -->
+    <script src="/js/aframe-hyperlink.js"></script>
+    <script src="/js/sw-load.js" data-service-worker="../sw.js" data-service-worker-scope="../"></script>
     
-
     <!--PRELOAD & PREFETCH-->
     <!--ANGEL-->
     <!--<link rel="preload" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2">
     <link rel="prefetch" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2"> -->
-    <!--CHAIR-->
-    <!--<link rel="preload" href="https://sketchfab.com/models/e33151b1f3704a25a920a6b3c2fc456e">
-    <link rel="prefetch" href="https://sketchfab.com/models/e33151b1f3704a25a920a6b3c2fc456e"> -->
+
   </head>
   <body>
 
@@ -38,7 +35,6 @@
 <!--ENTITIES-->
 
 <!--AAA // TELEPORT PYRAMIDS \\ AAA-->
-        <a-entity id="node-move" position="-1.68 -2 10.12" scale="0.43 0.43 0.43" collada-model="#pyramid" travel-node="transition:move"></a-entity>
         <a-entity id="node-move" position="-24.94 3.61 3.22" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move"></a-entity>
         <a-entity id="node-move" position="-54.27 3.61 -0.57" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" rotation="0 0 0" visible="true"></a-entity>
         
@@ -65,26 +61,8 @@
         </a-entity>
       </a-entity>
   
-        
-<!--AAA // EEL \\ AAA-->
-        <!--<a-entity collada-model="#eel" scale="1.11 1.11 1.11" position="4 0 3.78"></a-entity>-->
-          <!--FINS-->
-        <!--<a-entity id="FINS_">
-          <a-image src="#fin01" material="color:#FFF;shader:flat;side:double;transparent:true;src:#fin01" geometry="primitive:plane" position="6.39 5.23 4.24" rotation="-34.37746770784939 -46.9825392007275 91.67324722093173" scale="2.9 2.9 2.9"></a-image>
-          <a-image src="#fin01" material="color:#FFF;shader:flat;side:double;transparent:true;src:#fin01" geometry="primitive:plane" position="6.39 3.29 4.24" rotation="-34.37746770784939 -46.9825392007275 91.67324722093173" scale="3.37 3.37 3.37" visible="true"></a-image>
-          <a-image src="#fin01" material="color:#FFF;shader:flat;side:double;transparent:true;src:#fin01" geometry="primitive:plane" position="6.39 1 4.24" rotation="-34.37746770784939 -46.9825392007275 91.67324722093173" scale="2.73 2.73 2.73" visible="true"></a-image>
-        
-          <a-image src="#fin02" material="color:#FFF;shader:flat;side:double;transparent:true;src:#fin02" geometry="primitive:plane" position="6.32 5.14 1.27" rotation="-34.95042550298022 -149.54198452914486 -73.33859777674537" scale="2.9 2.9 2.9"></a-image>
-          <a-image src="#fin02" material="color:#FFF;shader:flat;side:double;transparent:true;src:#fin02" geometry="primitive:plane" position="6.32 3.29 1.27" rotation="-34.95 -149.54 -73.34" scale="3.14 3.14 3.14" visible="true"></a-image>
-          <a-image src="#fin02" material="color:#FFF;shader:flat;side:double;transparent:true;src:#fin02" geometry="primitive:plane" position="6.32 0.82 1.27" rotation="-34.95 -149.54 -73.34" scale="2.75 2.75 2.75" visible="true"></a-image>
-        
-          <a-image src="#fin01" material="color:#FFF;shader:flat;side:double;transparent:true;src:#fin01" geometry="primitive:plane" position="0.2 0.11 -3.66" rotation="0 0 -63.598315259521385" scale="4.46 5.11 5.11" visible="true"></a-image>
-          <a-image src="#fin01" material="color:#FFF;shader:flat;side:double;transparent:true;src:#fin01" geometry="primitive:plane" position="-5.55 0.11 3.05" rotation="0 0 -73.91155557187619" scale="3.37 3.37 3.37" visible="true"></a-image>-->
-        <!--</a-entity>-->
-        
-        
 <!--AAA // CAMERA \\ AAA-->
-        <a-entity position="0 0.75 0" rotation="0 90 0" camera look-controls wasd-controls>
+        <a-entity position="-5 0.75 5" rotation="0 90 0" camera look-controls wasd-controls>
             <a-cursor material="color: red; shader: flat"></a-cursor>
         </a-entity>
         <a-sky color="#000"></a-sky>
