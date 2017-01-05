@@ -4,37 +4,34 @@
     <meta charset="UTF-8">
     <title>lio - gallery - oil</title>
     <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
-    <script src="../js/aframe-travel-component.js"></script>
-    <script src="../js/aframe-animation-component.js"></script>
-    <script src="../js/aframe-hyperlink.js"></script>
-    <script src="../js/sw-load.js" data-service-worker="../sw.js" data-service-worker-scope="../"></script>
+    <script src="js/aframe-travel-component.js"></script>
+    <script src="js/aframe-animation-component.js"></script>
+    <!--<script src="/js/aframe-hyperlink.js"></script>
+    <script src="/js/sw-load.js" data-service-worker="../sw.js" data-service-worker-scope="../"></script> -->
     
 
     <!--PRELOAD & PREFETCH-->
     <!--ANGEL-->
-    <link rel="preload" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2">
-    <link rel="prefetch" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2">
+    <!--<link rel="preload" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2">
+    <link rel="prefetch" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2"> -->
     <!--CHAIR-->
-    <link rel="preload" href="https://sketchfab.com/models/e33151b1f3704a25a920a6b3c2fc456e">
-    <link rel="prefetch" href="https://sketchfab.com/models/e33151b1f3704a25a920a6b3c2fc456e">
+    <!--<link rel="preload" href="https://sketchfab.com/models/e33151b1f3704a25a920a6b3c2fc456e">
+    <link rel="prefetch" href="https://sketchfab.com/models/e33151b1f3704a25a920a6b3c2fc456e"> -->
   </head>
   <body>
+
     <a-scene travel-node-default="axis: x,y,z; offsetZ: 5;" fog="">
-    <!--<a-scene travel-node-default="axis: x,y,z; offsetZ: 5;" fog="type: linear; color: #; near: 1; far: 50;">-->
     
 <!--ASSETS-->
         <a-assets>
-          <a-asset-item id="pyramid" src="/VR_webStuff/room+12/3D/liooil-tele-02.dae"></a-asset-item>
-          <a-asset-item id="eel" src="/VR_webStuff/room+12/3D/fish-01.dae"></a-asset-item>
+          <!-- TELEPORTER -->
+          <a-asset-item id="pyramid" src="models/liooil-tele-02.dae"></a-asset-item>
           
           <!--FREE STORE ASSETS-->
-          <a-asset-item id="angel" src="/VR_webStuff/room+12/3D/AngelWings.dae"></a-asset-item>
-          <!--<a-asset-item id="chair" src="/VR_webStuff/room+12/3D/lawnChair.dae"></a-asset-item>-->
-        
-<!--           <img id="fin01" src="/VR_webStuff/room+12/2D/FishFin.png">
-          <img id="fin02" src="/VR_webStuff/room+12/2D/FishFin-L.png"> -->
-          
-          <img id="info" src="/VR_webStuff/room+12/2D/sign05.png">
+          <a-asset-item id="angel" src="models/AngelWings.dae"></a-asset-item>
+
+          <!--SIGNS-->
+          <img id="info" src="images/sign05.png">
         </a-assets>
         
         
@@ -44,45 +41,35 @@
         <a-entity id="node-move" position="-1.68 -2 10.12" scale="0.43 0.43 0.43" collada-model="#pyramid" travel-node="transition:move"></a-entity>
         <a-entity id="node-move" position="-24.94 3.61 3.22" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move"></a-entity>
         <a-entity id="node-move" position="-54.27 3.61 -0.57" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" rotation="0 0 0" visible="true"></a-entity>
-
-
-<!--AAA // WINDOW \\ AAA-->
-        <a-entity position="10.54 7.14 0" rotation="0 -90 0" scale="6 1.12 5" geometry="primitive:plane" material="color:#071635" visible="true"></a-entity>
-        <a-entity position="10.56 7.14 0" rotation="0 -90 0" scale="6.1 1.22 5.1" geometry="primitive:plane" material="color:#e22658" visible="true"></a-entity>
-        
-        <a-entity position="10.54 4.46 0" rotation="0 -90 0" scale="6 2.07 5" geometry="primitive:plane" material="color:#071635"></a-entity>
-        <a-entity position="10.56 4.46 0" rotation="0 -90 0" scale="6.1 2.17 5.1" geometry="primitive:plane" material="color:#e22658"></a-entity>
-        
-        <a-entity position="10.54 0.27 0" rotation="0 -90 0" scale="6 4.65 5" geometry="primitive:plane" material="color:#071635" visible="true"></a-entity>
-        <a-entity position="10.56 0.27 0" rotation="0 -90 0" scale="6.1 4.75 5.1" geometry="primitive:plane" material="color:#e22658" visible="true"></a-entity>
-        
         
 <!--AAA // WONDERS \\ AAA-->
         <a-entity id="STRUCTURE_" position="-54.27 -0.11 0">
+         
+          <!-- VISUAL ARCHITECTURE -->
           <a-entity position="0 0 0" scale="10 0.5 10" geometry="primitive:cylinder" material=""></a-entity>
-          
           <a-entity position="0 0 0" scale="5 5 5" geometry="primitive:torus;radius:3.24" material="" rotation="0 90 0" visible="true"></a-entity>
           <a-entity position="0 0 0" scale="2 2 0.5" geometry="primitive:torus;radius:3.24" material="" rotation="90 0 0" visible="true"></a-entity>
           <a-entity position="0 0 0" scale="2.5 2.5 4" geometry="primitive:torus;radius:4;radiusTubular:0.1;arc:360" material="" rotation="90 0 0" visible="true"></a-entity>
+
+          <!--INFO-->
+          <a-curvedimage src="#info" height="3.0" radius="5.7" theta-length="72" rotation="0 -125 0" scale="2 2 2" material="color:#FFF;shader:flat;side:double;transparent:true;repeat:-1 1;src:#info" geometry="height:3.0;primitive:cylinder;radius:5.7;segmentsRadial:48;thetaLength:72;openEnded:true;thetaStart:0" position="-5.83 4.5 0"></a-curvedimage>
           
-        <!--INFO-->
-        <a-curvedimage src="#info" height="3.0" radius="5.7" theta-length="72" rotation="0 -125 0" scale="2 2 2" material="color:#FFF;shader:flat;side:double;transparent:true;repeat:-1 1;src:#info" geometry="height:3.0;primitive:cylinder;radius:5.7;segmentsRadial:48;thetaLength:72;openEnded:true;thetaStart:0" position="-5.83 4.5 0"></a-curvedimage>
         
-        <!--ITEMS-->
-        <a-entity id="ITEMS_" position="-54.27 -0.11 0">
-        <a-entity collada-model="#angel" position="54.5 1.75 -5" scale="0.15 0.15 0.15" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2"></a-entity> 
-        <!--<a-entity collada-model="#chair" position="0 0.67 7.57" scale="0.15 0.15 0.15" href="https://sketchfab.com/models/e33151b1f3704a25a920a6b3c2fc456e"></a-entity> -->
-          <!--https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2-->
-        <!--<a-entity collada-model="#chicken" position="0 0.67 -7.57" scale="0.15 0.15 0.15"></a-entity> -->
-          <!--https://sketchfab.com/models/db5af30382ef40bb8622f65ea0beafc0#  -->
+          <!--ITEMS-->
+          <a-entity id="ITEMS_" position="-54.27 -0.11 0">
+          <a-entity collada-model="#angel" position="54.5 1.75 -5" scale="0.15 0.15 0.15" ></a-entity> 
+          <!--<a-entity collada-model="#chair" position="0 0.67 7.57" scale="0.15 0.15 0.15" href="https://sketchfab.com/models/e33151b1f3704a25a920a6b3c2fc456e"></a-entity> -->
+            <!--https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2-->
+          <!--<a-entity collada-model="#chicken" position="0 0.67 -7.57" scale="0.15 0.15 0.15"></a-entity> -->
+            <!--https://sketchfab.com/models/db5af30382ef40bb8622f65ea0beafc0#  -->
         </a-entity>
       </a-entity>
   
         
 <!--AAA // EEL \\ AAA-->
-        <a-entity collada-model="#eel" scale="1.11 1.11 1.11" position="4 0 3.78"></a-entity>
+        <!--<a-entity collada-model="#eel" scale="1.11 1.11 1.11" position="4 0 3.78"></a-entity>-->
           <!--FINS-->
-        <a-entity id="FINS_">
+        <!--<a-entity id="FINS_">
           <a-image src="#fin01" material="color:#FFF;shader:flat;side:double;transparent:true;src:#fin01" geometry="primitive:plane" position="6.39 5.23 4.24" rotation="-34.37746770784939 -46.9825392007275 91.67324722093173" scale="2.9 2.9 2.9"></a-image>
           <a-image src="#fin01" material="color:#FFF;shader:flat;side:double;transparent:true;src:#fin01" geometry="primitive:plane" position="6.39 3.29 4.24" rotation="-34.37746770784939 -46.9825392007275 91.67324722093173" scale="3.37 3.37 3.37" visible="true"></a-image>
           <a-image src="#fin01" material="color:#FFF;shader:flat;side:double;transparent:true;src:#fin01" geometry="primitive:plane" position="6.39 1 4.24" rotation="-34.37746770784939 -46.9825392007275 91.67324722093173" scale="2.73 2.73 2.73" visible="true"></a-image>
@@ -92,12 +79,12 @@
           <a-image src="#fin02" material="color:#FFF;shader:flat;side:double;transparent:true;src:#fin02" geometry="primitive:plane" position="6.32 0.82 1.27" rotation="-34.95 -149.54 -73.34" scale="2.75 2.75 2.75" visible="true"></a-image>
         
           <a-image src="#fin01" material="color:#FFF;shader:flat;side:double;transparent:true;src:#fin01" geometry="primitive:plane" position="0.2 0.11 -3.66" rotation="0 0 -63.598315259521385" scale="4.46 5.11 5.11" visible="true"></a-image>
-          <a-image src="#fin01" material="color:#FFF;shader:flat;side:double;transparent:true;src:#fin01" geometry="primitive:plane" position="-5.55 0.11 3.05" rotation="0 0 -73.91155557187619" scale="3.37 3.37 3.37" visible="true"></a-image>
-        </a-entity>
+          <a-image src="#fin01" material="color:#FFF;shader:flat;side:double;transparent:true;src:#fin01" geometry="primitive:plane" position="-5.55 0.11 3.05" rotation="0 0 -73.91155557187619" scale="3.37 3.37 3.37" visible="true"></a-image>-->
+        <!--</a-entity>-->
         
         
 <!--AAA // CAMERA \\ AAA-->
-        <a-entity position="1 0.75 1" camera look-controls wasd-controls>
+        <a-entity position="0 0.75 0" rotation="0 90 0" camera look-controls wasd-controls>
             <a-cursor material="color: red; shader: flat"></a-cursor>
         </a-entity>
         <a-sky color="#000"></a-sky>
