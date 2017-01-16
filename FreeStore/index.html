@@ -8,12 +8,15 @@
     <script src="js/aframe-animation-component.js"></script>
     <script src="js/aframe-hyperlink.js"></script>
     <script src="js/sw-load.js" data-service-worker="../sw.js" data-service-worker-scope="../"></script>
-    
+
+    <script src="item-module.js"></script>
+
     <!--PRELOAD & PREFETCH-->
-    
     <!--ANGEL-->
     <link rel="preload" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2">
-    <link rel="prefetch" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2">
+    <!-- SHIVA -->
+    <link rel="prefetch" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2" target="_blank">
+    <!-- preload might not be nessisary anymore though, check... -->
 
   </head>
   <body>
@@ -27,7 +30,14 @@
           
           <!--FREE STORE ASSETS-->
           <a-asset-item id="angel" src="models/AngelWings.dae"></a-asset-item>
+          <a-asset-item id="shiva" src="models/dancing-shiva-statue/shiva.dae"></a-asset-item>
+          <img id="shiva-texture" src="models/dancing-shiva-statue/textures/DiffuseMap_0.jpeg">
 
+<!--           <a-asset-item id="alley" src="models/Alley-Part02.obj"></a-asset-item>
+          <a-asset-item id="alley" src="models/Alley-Part02.mtl"></a-asset-item> -->
+
+          <!-- FONTS -->
+          <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>          
           <!--SIGNS-->
           <img id="info" src="images/sign05.png">
           <a-asset-item id="FREESTORE" src="models/FreeStore03.dae"></a-asset-item>
@@ -37,8 +47,9 @@
 <!--ENTITIES-->
 
 <!--AAA // TELEPORT PYRAMIDS \\ AAA-->
-        <a-entity id="node-move" position="-25 5 0" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move"></a-entity>
-        <a-entity id="node-move" position="10 5 0" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" rotation="0 0 0" visible="true"></a-entity>
+        <a-entity id="node-move" position="10 5 0" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" rotation="0 0 0" visible="true" material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity>
+
+        <a-entity id="node-move" position="-25 5 0" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
         
 <!--AAA // WONDERS \\ AAA-->
         <a-entity id="STRUCTURE_" position="-25 -0.11 0">
@@ -46,28 +57,31 @@
           <!-- VISUAL ARCHITECTURE -->
           <a-entity position="0 0 0" scale="1 1 1" rotation="0 90 0" collada-model="#FREESTORE"></a-entity>
 
-
           <!--INFO-->
           <a-curvedimage src="#info" height="3.0" radius="5.7" theta-length="72" rotation="0 -125 0" scale="2 2 2" material="color:#FFF;shader:flat;side:double;transparent:true;repeat:-1 1;src:#info" geometry="height:3.0;primitive:cylinder;radius:5.7;segmentsRadial:48;thetaLength:72;openEnded:true;thetaStart:0" position="-5.83 4.5 0"></a-curvedimage>
 
-         <!--  <a-entity id="selector" geometry="box" position="0 1.25 -5" scale=".5 .5 .5"></a-entity> -->
           <!-- ANGEL SELECTOR -->
-          <a-entity id="selector" geometry="0:b;1:o;2:x;mergeTo:null" position="0 1.25 -5" scale=".5 .5 .5" material="color:#ff0002;normalScale:{&quot;x&quot;:null}" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2"></a-entity>
+          <a-entity id="selector" geometry="0:b;1:o;2:x;mergeTo:null" position="0 1.25 -5" scale=".5 .5 .5" material="color:#ff0002;normalScale:{&quot;x&quot;:null}" href="https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2">
+          </a-entity>
           <!-- SHIVA SELECTOR -->
-          <a-entity id="selector" geometry="0:b;1:o;2:x;mergeTo:null" position="0 1.25 5" scale=".5 .5 .5" material="color:#ff0002;normalScale:{&quot;x&quot;:null}" href="https://sketchfab.com/models/bb7397cfc6ad4e5babdca6c5d1e5c074#"></a-entity>
-        
-          <!--ITEMS-->
+          <a-entity id="selector" geometry="0:b;1:o;2:x;mergeTo:null" position="0 1.25 5" scale=".5 .5 .5" material="color:#ff0002;normalScale:{&quot;x&quot;:null}" href="https://sketchfab.com/models/bb7397cfc6ad4e5babdca6c5d1e5c074#" target="_blank"></a-entity>
+          <!-- MLK SELECTOR -->
+          <!-- https://cdn.thingiverse.com -->
+
+<!--AAA // ITEMS \\ AAA-->
           <a-entity id="ITEMS_" position="-54.27 -0.11 0">
-          <a-entity collada-model="#angel" position="54.2 1.75 -11.85" scale="0.15 0.15 0.15" material=""></a-entity> 
+            <!-- ITEM -- ANGEL WINGS -->
+            <a-entity class="item" collada-model="#angel" position="54.2 1.75 -11.85" scale="0.15 0.15 0.15" material="">
+              <a-animation attribute="rotation" begin="mouseenter" repeat="indefinite" to="0 360 0"></a-animation>
+              <a-animation attribute="rotation" begin="mouseexit" repeat="indefinite" to="0 0 0"></a-animation>
+            </a-entity> 
 
-          <!--<a-entity collada-model="#chair" position="0 0.67 7.57" scale="0.15 0.15 0.15" href="https://sketchfab.com/models/e33151b1f3704a25a920a6b3c2fc456e"></a-entity> -->
-
-            <!--https://sketchfab.com/models/2cc3a0234ed34973a5c2cca73f0332b2-->
-          <!--<a-entity collada-model="#chicken" position="0 0.67 -7.57" scale="0.15 0.15 0.15"></a-entity> -->
+            <!-- ITEM -- SHIVA -->
+            <a-entity collada-model="#shiva" position="54.2 4 11.85" rotation="0 -90 0" scale="1.2 1.2 1.2"></a-entity> 
 
             <!--https://sketchfab.com/models/db5af30382ef40bb8622f65ea0beafc0#  -->
+          </a-entity>
         </a-entity>
-      </a-entity>
   
 <!--AAA // CAMERA \\ AAA-->
         <a-entity position="10 0.75 0" rotation="0 90 0" camera look-controls wasd-controls>
