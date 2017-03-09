@@ -6,8 +6,7 @@
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="https://rawgit.com/chenzlabs/auto-detect-controllers/master/dist/aframe-auto-detect-controllers-component.min.js"></script>
     <script src="https://rawgit.com/ngokevin/aframe-layout-component/master/dist/aframe-layout
-    -component.min.js"></script>
-    <script src="https://rawgit.com/ngokevin/aframe-template-component/master/dist/aframe-template-component.min.js"></script>
+-component.min.js"></script>
     <script src="js/aframe-travel-component.js"></script>
     <script src="js/aframe-animation-component.js"></script>
     <script src="js/aframe-hyperlink.js"></script>
@@ -30,7 +29,8 @@
 <!--ASSETS-->
         <a-assets>
           <!-- TELEPORTER -->
-          <a-asset-item id="pyramid" crossorigin="" src="models/liooil-tele-02.dae"></a-asset-item>
+          <a-asset-item id="pyramid" src="models/liooil-tele-02.dae"></a-asset-item>
+          
           <!--FREE STORE ASSETS-->
           <a-asset-item id="angel" src="models/AngelWings.dae"></a-asset-item>
 	  <a-asset-item id="party-hat-cone" src="models/party-hat-cone/party-hat01.dae"></a-asset-item>	
@@ -47,14 +47,6 @@
           <!--SIGNS-->
           <img id="info" src="images/sign05.png">
           <a-asset-item id="FREESTORE" src="models/FreeStore04.dae"></a-asset-item>
-<!-- Outer teleporters-->
-          <script id="pyramids" type="text/x-nunjucks-template">
-                <a-entity layout="type: circle; radius:60" position="-12.4 2 0">
-                    {% for x in range(num) %}
-        <a-entity id="node-move" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
-                    {% endfor %}
-                </a-entity>
-            </script>   
         </a-assets>
 
 <!--Controllers-->        
@@ -65,9 +57,27 @@
         <a-entity id="node-move" position="10 5 0" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" rotation="0 0 0" visible="true" material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity>
 
         <a-entity id="node-move" position="-25 5 0" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+        
 
-        <a-entity template="src: #pyramids" data-num="10"></a-entity>
-
+<!-- Outer teleporters-->
+        <a-entity layout="type: circle; radius:60" position="-12.4 2 0">
+            <a-entity id="node-move" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+            <a-entity id="node-move" position="-25 5 -60" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+            <a-entity id="node-move" position="-25 5 -60" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+            <a-entity id="node-move" position="-25 5 -60" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+            <a-entity id="node-move" position="-25 5 -60" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+            <a-entity id="node-move" position="-25 5 -60" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+            <a-entity id="node-move" position="-25 5 -60" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+            <a-entity id="node-move" position="-25 5 -60" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+            <a-entity id="node-move" position="-25 5 -60" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+            <a-entity id="node-move" position="-25 5 -60" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+            <a-entity id="node-move" position="-25 5 -60" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+            <a-entity id="node-move" position="-25 5 -60" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+            <a-entity id="node-move" position="-25 5 -60" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+            <a-entity id="node-move" position="-25 5 -60" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+            <a-entity id="node-move" position="-25 5 -60" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+            <a-entity id="node-move" position="-25 5 -60" scale="0.7 0.7 0.7" collada-model="#pyramid" travel-node="transition:move" material="color: magenta; metalness: 1; normalScale: [object Object]; roughness: 0.1; sphericalEnvMap: #sky"></a-entity>
+        </a-entity>
 <!--AAA // WONDERS \\ AAA-->
         <a-entity id="STRUCTURE_" position="-25 -0.11 0">
          
@@ -85,7 +95,7 @@
 	
 	  <!-- PARTY HAT (CROWN) SELECTOR -->
           <a-entity id="selector" geometry="0:b;1:o;2:x;mergeTo:null" position="-5 1.25 -1.59" scale=".5 .5 .5" material="color:#ff0002;normalScale:{&quot;x&quot;:null}" href="http://www.thingiverse.com/thing:1131821" target="_blank"></a-entity>
-            </script>
+	  
 
 <!--AAA // ITEMS \\ AAA-->
           <a-entity id="ITEMS_" position="-54.27 -0.11 0">
